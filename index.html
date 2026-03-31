@@ -2,535 +2,588 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Grupo Flora | Flores que encantam - Floricultura em São João da Boa Vista</title>
-    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Grupo Flora | Floricultura & Presentes - São João da Boa Vista</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts para tipografia delicada -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fef9f0;
-            color: #2d3e2b;
+            font-family: 'Poppins', sans-serif;
+            background: #fffef7;
+            color: #2c2418;
             scroll-behavior: smooth;
         }
-        /* Paleta de cores - tons de verde, rosa e terrosos */
+
+        /* Paleta de cores inspirada em flores e natureza */
         :root {
-            --primary-green: #2c5e2a;
-            --primary-soft-green: #4a7c3e;
-            --accent-pink: #e8b4b8;
-            --accent-rose: #d97a6c;
-            --cream-bg: #fff9f0;
-            --warm-gray: #6b5a4e;
-            --golden: #c9a87b;
+            --flora-rose: #e87a7a;
+            --flora-green: #6b8c5c;
+            --flora-green-dark: #4a6741;
+            --flora-gold: #e6b17e;
+            --flora-cream: #fff8ed;
+            --flora-brown: #5e4b3a;
+            --flora-pink-light: #ffdede;
         }
-        .navbar {
-            background: rgba(44, 94, 42, 0.96) !important;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            padding: 0.6rem 0;
-            transition: all 0.2s;
+
+        h1, h2, h3, h4, .logo-font {
+            font-family: 'Playfair Display', serif;
         }
-        /* ========= LOGO ESTILIZADA FLORICULTURA ========= */
-        .navbar-brand {
+
+        /* Logo personalizada com IMAGEM REAL */
+        .logo {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            padding: 5px 0;
         }
-        .logo-icon {
-            background: linear-gradient(135deg, #e8b4b8, #d97a6c);
+        .logo-img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(232,122,122,0.3);
+            border: 2px solid var(--flora-gold);
+            transition: transform 0.3s ease;
+        }
+        .logo:hover .logo-img {
+            transform: scale(1.05);
+        }
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--flora-green), var(--flora-rose));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        .logo-text small {
+            font-size: 0.7rem;
+            display: block;
+            color: var(--flora-brown);
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 248, 237, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 0.8rem 0;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--flora-brown) !important;
+            margin: 0 0.5rem;
+            transition: 0.3s;
+            position: relative;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--flora-rose) !important;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--flora-rose);
+            transition: 0.3s;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 70%;
+        }
+        .btn-floral {
+            background: var(--flora-rose);
+            color: white;
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-floral:hover {
+            background: var(--flora-gold);
+            transform: translateY(-2px);
+            color: #2c2418;
+        }
+        .btn-outline-floral {
+            border: 2px solid var(--flora-rose);
+            color: var(--flora-rose);
+            border-radius: 50px;
+            padding: 8px 24px;
+            font-weight: 500;
+            background: transparent;
+            transition: 0.3s;
+        }
+        .btn-outline-floral:hover {
+            background: var(--flora-rose);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--flora-cream) 0%, #fff5ea 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "🌸";
+            font-size: 280px;
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--flora-green-dark);
+            line-height: 1.2;
+        }
+        .hero .highlight {
+            color: var(--flora-rose);
+            position: relative;
+            display: inline-block;
+        }
+        .hero .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: rgba(232,122,122,0.2);
+            z-index: -1;
+        }
+
+        /* Seção de categorias / ícones */
+        .category-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0e6dc;
+            height: 100%;
+        }
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(107,140,92,0.12);
+            border-color: var(--flora-gold);
+        }
+        .category-card i {
+            font-size: 2.8rem;
+            color: var(--flora-rose);
+            background: var(--flora-pink-light);
+            padding: 18px;
+            border-radius: 60px;
+            margin-bottom: 1.2rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .section-title:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--flora-rose);
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            border-radius: 3px;
+        }
+        .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Cards de produtos */
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #f5ede4;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--flora-rose);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Sobre / informações empresa */
+        .info-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--flora-rose);
+        }
+        .testimonial {
+            background: var(--flora-cream);
+            border-radius: 28px;
+            padding: 2rem;
+            position: relative;
+        }
+        .testimonial i {
+            font-size: 2rem;
+            color: var(--flora-gold);
+            opacity: 0.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e2b;
+            color: #e9e1d4;
+        }
+        .footer a {
+            color: #f7d9b5;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .btn-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--flora-rose);
+            color: white;
             width: 48px;
             height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(217,122,108,0.4);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 99;
+            transition: 0.3s;
         }
-        .logo-icon i {
-            font-size: 1.8rem;
-            color: white;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+        .btn-top:hover {
+            background: var(--flora-green);
+            transform: translateY(-3px);
         }
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-        .logo-main {
-            font-size: 1.7rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: white;
-            font-family: 'Playfair Display', serif;
-        }
-        .logo-main span {
-            color: #f9e0a8;
-            font-weight: 800;
-        }
-        .logo-tag {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,0.85);
-            font-weight: 500;
-            margin-top: -2px;
-        }
-        .navbar-brand:hover .logo-icon {
-            transform: scale(1.05) rotate(5deg);
-        }
-        /* Footer logo */
-        .footer-logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .footer-logo-icon {
-            background: linear-gradient(135deg, #e8b4b8, #d97a6c);
-            width: 42px;
-            height: 42px;
+        
+        /* Logo no footer também */
+        .footer-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
             border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            border: 2px solid var(--flora-gold);
         }
-        .footer-logo-icon i {
-            font-size: 1.5rem;
-            color: white;
-        }
-        .footer-logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: white;
-            font-family: 'Playfair Display', serif;
-        }
-        .footer-logo-text span {
-            color: #f9e0a8;
-        }
-        /* ===== fim logo ===== */
-        .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-            font-weight: 500;
-            margin: 0 0.3rem;
-            transition: 0.2s;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #f9e0a8 !important;
-        }
-        .hero {
-            background: linear-gradient(135deg, #2c5e2a 0%, #4a7c3e 100%);
-            padding: 5rem 0 5rem 0;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: "🌸";
-            font-size: 12rem;
-            opacity: 0.08;
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            pointer-events: none;
-        }
-        .hero h1 {
-            font-weight: 800;
-            font-size: 3.2rem;
-            font-family: 'Playfair Display', serif;
-        }
-        .btn-primary-custom {
-            background-color: #d97a6c;
-            border: none;
-            padding: 12px 32px;
-            font-weight: 600;
-            color: white;
-            border-radius: 50px;
-            transition: all 0.3s;
-        }
-        .btn-primary-custom:hover {
-            background-color: #c05f52;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .btn-outline-light-custom {
-            border: 2px solid rgba(255,255,255,0.8);
-            border-radius: 50px;
-            padding: 10px 28px;
-            color: white;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .btn-outline-light-custom:hover {
-            background: white;
-            color: #2c5e2a;
-            border-color: white;
-        }
-        .section-title {
-            font-weight: 800;
-            font-size: 2.2rem;
-            position: relative;
-            margin-bottom: 3rem;
-            color: #2c5e2a;
-            font-family: 'Playfair Display', serif;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: #d97a6c;
-            margin-top: 12px;
-            border-radius: 3px;
-        }
-        .card-flower {
-            border: none;
-            border-radius: 28px;
-            transition: 0.25s ease-in-out;
-            background: white;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-        .card-flower:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
-        }
-        .price {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #d97a6c;
-        }
-        .icon-feature {
-            font-size: 2.2rem;
-            color: #4a7c3e;
-            margin-bottom: 1rem;
-        }
-        .info-card {
-            background: white;
-            border-radius: 24px;
-            padding: 1.8rem;
-            height: 100%;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
-            transition: all 0.2s;
-            border: 1px solid #f0e1cf;
-            text-align: center;
-        }
-        .info-card i {
-            font-size: 2.5rem;
-            color: #d97a6c;
-        }
-        footer {
-            background-color: #2c5e2a;
-            color: #f0e6d8;
-            padding-top: 3rem;
-            padding-bottom: 1.5rem;
-        }
-        .social-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            color: #f0e6d8;
-            transition: 0.2s;
-        }
-        .social-icon:hover {
-            color: #f9e0a8;
-        }
-        .btn-wpp {
-            background-color: #25D366;
-            border-radius: 50px;
-            padding: 10px 24px;
-            font-weight: 600;
-            color: white;
-            transition: 0.2s;
-            border: none;
-        }
-        .btn-wpp:hover {
-            background-color: #1da851;
-            transform: scale(1.02);
-        }
-        .badge-cnpj {
-            font-family: monospace;
-            background: #f0e1cf;
-            color: #2c5e2a;
-            font-size: 0.85rem;
-        }
-        .product-img-icon {
-            font-size: 3.5rem;
-            color: #d97a6c;
-        }
-        .testimonial {
-            background-color: #fff5ed;
-            border-radius: 30px;
-        }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
             }
-            .section-title {
-                font-size: 1.8rem;
+            .logo-text {
+                font-size: 1.2rem;
             }
-            .logo-main {
-                font-size: 1.3rem;
+            .logo-img {
+                width: 42px;
+                height: 42px;
             }
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-        }
-        /* animação delicada */
-        @keyframes softPulse {
-            0% { opacity: 0.6; transform: scale(1);}
-            100% { opacity: 1; transform: scale(1.02);}
-        }
-        .hero-icon-flower {
-            animation: softPulse 2s infinite alternate;
         }
     </style>
 </head>
 <body>
 
-<!-- Navbar com LOGO GRUPO FLORA -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<!-- Botão voltar ao topo -->
+<a href="#" class="btn-top" id="backToTop"><i class="fas fa-leaf"></i></a>
+
+<!-- Navbar com LOGO (IMAGEM REAL) -->
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <div class="logo-icon">
-                <i class="bi bi-flower1"></i>
-            </div>
+        <a class="logo" href="#">
+            <!-- LOGO COM IMAGEM DE FLOR - SUBSTITUA AQUI PELA SUA LOGO -->
+            <img src="https://cdn-icons-png.flaticon.com/512/3094/3094845.png" alt="Logo Grupo Flora" class="logo-img">
             <div class="logo-text">
-                <div class="logo-main">Grupo<span>Flora</span></div>
-                <div class="logo-tag">FLORES & ENCANTOS</div>
+                Grupo Flora
+                <small>floricultura & presentes</small>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#produtos">Flores & Arranjos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
-                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre nós</a></li>
+                <li class="nav-item"><a class="nav-link" href="#produtos">Flores & Buquês</a></li>
+                <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Nossa História</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             </ul>
-            <a href="#contato" class="btn btn-primary-custom ms-lg-3"><i class="bi bi-send-heart me-1"></i> Peça já</a>
+            <a href="https://wa.me/5519994479582?text=Olá%20Grupo%20Flora%2C%20quero%20fazer%20um%20pedido%20especial!" target="_blank" class="btn btn-floral"><i class="fab fa-whatsapp"></i> Peça pelo WhatsApp</a>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section com frase e flores -->
+<!-- Hero Section com flores -->
 <section id="home" class="hero">
-    <div class="container py-4">
+    <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-                <h1 class="mb-3">Flores que <span style="color:#f9e0a8;">emocionam</span> <br> para cada momento especial</h1>
-                <p class="lead mb-4">Há mais de 15 anos levando beleza, cor e alegria para São João da Boa Vista e região. Buquês personalizados, arranjos e decorações com todo cuidado que você merece.</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="#produtos" class="btn btn-primary-custom btn-lg"><i class="bi bi-flower2 me-2"></i>Nossas Flores</a>
-                    <a href="https://wa.me/5519994479582?text=Olá!%20Gostaria%20de%20um%20buquê%20especial%20do%20Grupo%20Flora." target="_blank" class="btn btn-wpp btn-lg"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+            <div class="col-lg-6">
+                <span class="badge bg-light text-rose mb-3 py-2 px-3 rounded-pill" style="background:#ffe0e0; color:#b95a5a;"><i class="fas fa-heart"></i> Flores que encantam desde 2008</span>
+                <h1>Transforme momentos com a <span class="highlight">beleza das flores</span> e o carinho que só a Grupo Flora oferece</h1>
+                <p class="lead mt-4">Buquês personalizados, arranjos para datas especiais e decoração floral em São João da Boa Vista. Tradição, qualidade e amor em cada pétala.</p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="#produtos" class="btn btn-floral btn-lg"><i class="fas fa-shopping-bag"></i> Escolher presente</a>
+                    <a href="https://wa.me/5519994479582?text=Gostaria%20de%20um%20buquê%20personalizado" class="btn btn-outline-floral"><i class="fab fa-whatsapp"></i> Fale com a florista</a>
                 </div>
-                <div class="mt-4 d-flex flex-wrap gap-4">
-                    <div><i class="bi bi-truck text-warning me-1"></i> Entrega rápida</div>
-                    <div><i class="bi bi-gift text-warning me-1"></i> Cartão personalizado</div>
-                    <div><i class="bi bi-star-fill text-warning me-1"></i> Frescor garantido</div>
+                <div class="row mt-5 pt-3">
+                    <div class="col-4">
+                        <i class="fas fa-smile-wink text-success fs-2"></i>
+                        <p class="fw-bold mt-2 mb-0">+8.000 clientes</p>
+                        <small>felizes</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="fas fa-calendar-check text-success fs-2"></i>
+                        <p class="fw-bold mt-2 mb-0">17 anos</p>
+                        <small>de tradição</small>
+                    </div>
+                    <div class="col-4">
+                        <i class="fas fa-truck text-success fs-2"></i>
+                        <p class="fw-bold mt-2 mb-0">Entrega rápida</p>
+                        <small>em SJBV</small>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-5 text-center">
-                <i class="bi bi-flower2 hero-icon-flower" style="font-size: 8rem; opacity: 0.9; color: #f9e0a8;"></i>
-                <p class="mt-2 fw-semibold">"A vida é mais bonita com flores"</p>
+            <div class="col-lg-6 text-center">
+                <div class="position-relative">
+                    <img src="https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Buquê de flores" class="img-fluid rounded-4 shadow-lg" style="max-height: 450px; width: 100%; object-fit: cover;">
+                    <div class="position-absolute bottom-0 start-0 bg-white rounded-3 p-2 m-3 shadow-sm">
+                        <i class="fas fa-star text-warning"></i> <strong>Entregamos em São João da Boa Vista e região</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Seção Produtos / Arranjos principais -->
-<section id="produtos" class="py-5">
-    <div class="container">
+<!-- Seção de Categorias / Ícones principais -->
+<section id="categorias" class="py-5">
+    <div class="container py-4">
         <div class="text-center">
-            <h2 class="section-title d-inline-block text-center">Nossos arranjos especiais</h2>
-            <p class="text-muted mb-5">Flores frescas, design exclusivo e entrega com amor</p>
+            <h2 class="section-title d-inline-block">Nossas Especialidades</h2>
+            <p class="text-secondary mt-3">Flores frescas, arranjos exclusivos e muito mais para cada ocasião</p>
         </div>
-        <div class="row g-4">
-            <!-- Buquê romântico -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card-flower card h-100 p-4 text-center">
-                    <i class="bi bi-suit-heart-fill product-img-icon"></i>
-                    <h3 class="mt-2 fw-bold">Buquê Romântico</h3>
-                    <div class="price">R$ 89,90</div>
-                    <hr>
-                    <ul class="list-unstyled text-start mt-2">
-                        <li><i class="bi bi-flower1 text-success me-2"></i> Rosas vermelhas + astromélias</li>
-                        <li><i class="bi bi-flower1 text-success me-2"></i> Folhagem e laço de cetim</li>
-                        <li><i class="bi bi-chat-heart me-2"></i> Cartão personalizado</li>
-                    </ul>
-                    <a href="#contato" class="btn btn-outline-dark rounded-pill mt-3 w-50 mx-auto">Encomendar</a>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <i class="fas fa-bouquet"></i>
+                    <h4 class="fw-bold mt-3">Buquês Românticos</h4>
+                    <p class="text-secondary">Rosas, lírios e orquídeas para momentos especiais e declarações de amor.</p>
                 </div>
             </div>
-            <!-- Arranjo Luxo -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card-flower card h-100 p-4 text-center border-top border-3" style="border-color:#d97a6c !important;">
-                    <i class="bi bi-stars product-img-icon"></i>
-                    <h3 class="mt-2 fw-bold">Arranjo Luxo</h3>
-                    <div class="price">R$ 159,90</div>
-                    <hr>
-                    <ul class="list-unstyled text-start mt-2">
-                        <li><i class="bi bi-flower1 text-success me-2"></i> Orquídeas + lírios brancos</li>
-                        <li><i class="bi bi-flower1 text-success me-2"></i> Vaso de cerâmica premium</li>
-                        <li><i class="bi bi-calendar-heart me-2"></i> Ideal para aniversários</li>
-                    </ul>
-                    <a href="#contato" class="btn btn-primary-custom rounded-pill mt-3 w-50 mx-auto">Quero esse</a>
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <i class="fas fa-gift"></i>
+                    <h4 class="fw-bold mt-3">Presentes & Cestas</h4>
+                    <p class="text-secondary">Combinamos flores com vinhos, chocolates e itens exclusivos.</p>
                 </div>
             </div>
-            <!-- Caixa surpresa -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card-flower card h-100 p-4 text-center">
-                    <i class="bi bi-gift-fill product-img-icon"></i>
-                    <h3 class="mt-2 fw-bold">Caixa Surpresa</h3>
-                    <div class="price">R$ 119,90</div>
-                    <hr>
-                    <ul class="list-unstyled text-start mt-2">
-                        <li><i class="bi bi-flower1 text-success me-2"></i> Flores do campo + girassóis</li>
-                        <li><i class="bi bi-emoji-smile me-2"></i> Caixa decorativa exclusiva</li>
-                        <li><i class="bi bi-truck me-2"></i> Entrega grátis no centro</li>
-                    </ul>
-                    <a href="#contato" class="btn btn-outline-dark rounded-pill mt-3 w-50 mx-auto">Presentear</a>
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4 class="fw-bold mt-3">Eventos & Decoração</h4>
+                    <p class="text-secondary">Casamentos, formaturas e eventos corporativos com arranjos personalizados.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="category-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4 class="fw-bold mt-3">Flores para Encomenda</h4>
+                    <p class="text-secondary">Criamos seu arranjo dos sonhos com as flores da estação.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Diferenciais / Ícones e Frases -->
-<section id="diferenciais" class="py-5" style="background: #fff5ed;">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="section-title d-inline-block">Por que escolher o Grupo Flora?</h2>
-            <p class="text-muted">Tradição, qualidade e um toque especial em cada detalhe</p>
+<!-- Seção de Produtos em destaque -->
+<section id="produtos" class="py-5 bg-light">
+    <div class="container py-4">
+        <div class="text-center">
+            <h2 class="section-title d-inline-block">Flores que emocionam</h2>
+            <p class="text-secondary mt-2">Escolha o presente perfeito e surpreenda quem você ama</p>
         </div>
-        <div class="row g-4 text-center">
-            <div class="col-md-6 col-lg-3">
-                <div class="info-card">
-                    <i class="bi bi-flower2"></i>
-                    <h4 class="mt-2 fw-bold">Flores frescas</h4>
-                    <p class="text-secondary">Colhemos diariamente e garantimos até 7 dias de durabilidade com cuidados especiais.</p>
+        <div class="row mt-5 g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/568021/pexels-photo-568021.jpeg?auto=compress&cs=tinysrgb&w=600');">
+                        <span class="product-tag">Mais pedido</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="fw-bold">Buquê Encanto Rosé</h4>
+                        <p class="text-secondary">12 rosas vermelhas + folhagens, laço de cetim. Perfeito para presentear.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-4 fw-bold text-success">R$ 89,90</span>
+                            <a href="https://wa.me/5519994479582?text=Quero%20o%20Buquê%20Encanto%20Rosé" class="btn btn-floral btn-sm">Encomendar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="info-card">
-                    <i class="bi bi-truck"></i>
-                    <h4 class="mt-2 fw-bold">Entrega ágil</h4>
-                    <p class="text-secondary">Entregamos em São João da Boa Vista e região com pontualidade e cuidado.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/1210050/pexels-photo-1210050.jpeg?auto=compress&cs=tinysrgb&w=600');">
+                        <span class="product-tag">Novidade</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="fw-bold">Orquídea Exótica</h4>
+                        <p class="text-secondary">Vaso de orquídea Phalaenopsis com pedras decorativas e mensagem personalizada.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-4 fw-bold text-success">R$ 129,90</span>
+                            <a href="https://wa.me/5519994479582?text=Quero%20a%20Orquídea%20Exótica" class="btn btn-floral btn-sm">Encomendar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="info-card">
-                    <i class="bi bi-chat-heart"></i>
-                    <h4 class="mt-2 fw-bold">Atendimento personalizado</h4>
-                    <p class="text-secondary">Ajudamos você a escolher o arranjo ideal para cada ocasião.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="info-card">
-                    <i class="bi bi-award"></i>
-                    <h4 class="mt-2 fw-bold">Mais de 15 anos</h4>
-                    <p class="text-secondary">Tradição e confiança no mercado de flores desde 2008.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&w=600');">
+                        <span class="product-tag">Premium</span>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="fw-bold">Cesta Flores & Vinhos</h4>
+                        <p class="text-secondary">Arranjo floral + vinho tinto e chocolates belgas. Luxo e sofisticação.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-4 fw-bold text-success">R$ 199,90</span>
+                            <a href="https://wa.me/5519994479582?text=Quero%20a%20Cesta%20Flores%20e%20Vinhos" class="btn btn-floral btn-sm">Encomendar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- frase inspiradora -->
-        <div class="mt-5 text-center bg-white rounded-4 p-4 shadow-sm">
-            <i class="bi bi-quote fs-1 text-primary opacity-50" style="color:#d97a6c;"></i>
-            <p class="fs-5 fst-italic text-dark">"Cada flor que sai do Grupo Flora carrega um pouco da nossa paixão em alegrar a vida das pessoas."</p>
-            <p class="fw-semibold">Isabela Flores - Fundadora</p>
+        <div class="text-center mt-5">
+            <a href="https://wa.me/5519994479582?text=Quero%20ver%20mais%20opções%20de%20buquês" class="btn btn-outline-floral btn-lg"><i class="fab fa-whatsapp"></i> Ver catálogo completo</a>
         </div>
     </div>
 </section>
 
-<!-- Sobre / Empresa com dados legais -->
+<!-- Sobre a empresa / dados institucionais -->
 <section id="sobre" class="py-5">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
-                <h2 class="section-title">Sobre o Grupo Flora</h2>
-                <p class="lead">Há mais de uma década transformando momentos em memórias floridas.</p>
-                <p>Somos a <strong>Isabela Flores Intermediacoes LTDA</strong>, uma empresa que nasceu do amor pelas flores e do desejo de oferecer arranjos únicos. Localizada no coração de São João da Boa Vista, na Avenida Dona Gertrudes, atendemos clientes que buscam qualidade, beleza e emoção em cada petala.</p>
-                <div class="mt-4 p-3 bg-light rounded-3">
-                    <div class="row row-cols-1 row-cols-sm-2 g-3">
-                        <div class="col"><i class="bi bi-building me-2"></i> <strong>Razão Social:</strong> Isabela Flores Intermediacoes LTDA</div>
-                        <div class="col"><i class="bi bi-tag me-2"></i> <strong>Nome Fantasia:</strong> Grupo Flora</div>
-                        <div class="col"><i class="bi bi-card-text me-2"></i> <strong>CNPJ:</strong> 10.158.838/0001-61</div>
-                        <div class="col"><i class="bi bi-calendar-check me-2"></i> <strong>Desde:</strong> 20/06/2008</div>
+                <h2 class="section-title">Flores com alma e tradição</h2>
+                <p class="fs-5 text-secondary">Desde 2008, a Grupo Flora leva cor, perfume e emoção para os lares e eventos de São João da Boa Vista. Somos apaixonados por flores e por encantar pessoas.</p>
+                <div class="info-card mt-4">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <i class="fas fa-store text-rose me-2 fs-5" style="color: var(--flora-rose);"></i> <strong>Razão Social:</strong> Isabela Flores Intermediações LTDA
+                        </div>
+                        <div class="col-12">
+                            <i class="fas fa-leaf text-rose me-2"></i> <strong>Nome Fantasia:</strong> Grupo Flora
+                        </div>
+                        <div class="col-12">
+                            <i class="fas fa-id-card text-rose me-2"></i> <strong>CNPJ:</strong> 10.158.838/0001-61
+                        </div>
+                        <div class="col-12">
+                            <i class="fas fa-calendar-alt text-rose me-2"></i> <strong>Data Situação Cadastral:</strong> 20/06/2008
+                        </div>
+                        <div class="col-12">
+                            <i class="fas fa-map-marker-alt text-rose me-2"></i> <strong>Endereço:</strong> Avenida Dona Gertrudes, 273 - Centro, São João da Boa Vista - SP, CEP: 13870-110
+                        </div>
+                        <div class="col-12">
+                            <i class="fas fa-phone-alt text-rose me-2"></i> <strong>WhatsApp:</strong> (19) 99447-9582
+                        </div>
                     </div>
-                </div>
-                <div class="mt-3 d-flex flex-wrap gap-3">
-                    <span class="badge-cnpj badge bg-light p-2 rounded-3"><i class="bi bi-geo-alt-fill me-1"></i> Avenida Dona Gertrudes, 273 - Centro</span>
-                    <span class="badge-cnpj badge bg-light p-2 rounded-3"><i class="bi bi-mailbox"></i> São João da Boa Vista - SP, 13870-110</span>
+                    <hr class="my-3">
+                    <p class="mb-0"><i class="fas fa-check-circle text-success"></i> Empresa regular, ativa desde 2008, comprometida com qualidade e satisfação dos clientes.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="bg-white rounded-4 p-4 shadow">
-                    <i class="bi bi-flower3" style="color:#d97a6c; font-size: 2rem;"></i>
-                    <h4 class="mt-2 fw-bold">Nossa missão</h4>
-                    <p>Espalhar beleza e afeto através de flores de qualidade, proporcionando experiências sensoriais e emocionais únicas para cada cliente.</p>
-                    <hr>
-                    <h5><i class="bi bi-heart-fill" style="color:#e8b4b8;"></i> Compromisso com a excelência</h5>
-                    <p>Trabalhamos com fornecedores selecionados e floristas experientes para garantir arranjos que encantam.</p>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="fs-5 fst-italic mt-2">"A Grupo Flora é sinônimo de delicadeza e pontualidade. Já presenteei várias vezes e sempre recebo elogios pela beleza dos arranjos. Recomendo de olhos fechados!"</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle me-3" width="55" alt="Cliente">
+                        <div><strong>Mariana Oliveira</strong><br><small>Cliente desde 2015</small></div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-warning bg-opacity-10 rounded-3 border-start border-4 border-warning">
+                    <i class="fas fa-trophy me-2 text-warning"></i> <strong>Reconhecimento:</strong> Destaque em Excelência no Atendimento – Prêmio Empresa Amiga da Cidade 2024.
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Seção Contato + Localização -->
-<section id="contato" class="py-5" style="background: #ffffff;">
+<!-- Contato e Localização -->
+<section id="contato" class="py-5 bg-light">
     <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-5">
-                <h2 class="section-title mb-3">Fale com a gente</h2>
-                <p class="mb-4">Estamos prontos para criar o arranjo perfeito para o seu momento. Faça seu pedido, tire dúvidas ou solicite uma cotação.</p>
-                <div class="d-flex flex-column gap-3">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-whatsapp fs-2 me-3" style="color:#25D366;"></i>
-                        <div><strong>WhatsApp / Telefone</strong><br>(19) 99447-9582</div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-geo-alt fs-2 me-3" style="color:#d97a6c;"></i>
-                        <div><strong>Endereço da Loja</strong><br>Avenida Dona Gertrudes, 273 - Centro, São João da Boa Vista - SP, 13870-110</div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-envelope fs-2 me-3" style="color:#4a7c3e;"></i>
-                        <div><strong>E-mail</strong><br>contato@grupoflora.com.br</div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-clock fs-2 me-3" style="color:#c9a87b;"></i>
-                        <div><strong>Horário de Funcionamento</strong><br>Segunda a Sábado: 9h às 19h | Domingos: 9h às 13h (entregas especiais)</div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <h2 class="section-title">Visite nossa floricultura</h2>
+                <p class="lead text-secondary">Venha sentir o perfume das flores ao vivo ou faça seu pedido online. Entregamos em toda São João da Boa Vista e cidades vizinhas.</p>
                 <div class="mt-4">
-                    <a href="https://wa.me/5519994479582?text=Olá!%20Gostaria%20de%20um%20buquê%20do%20Grupo%20Flora" target="_blank" class="btn btn-wpp btn-lg w-100"><i class="bi bi-whatsapp"></i> Fazer pedido agora</a>
+                    <div class="d-flex mb-4">
+                        <i class="fas fa-map-pin fa-2x me-3" style="color: var(--flora-rose);"></i>
+                        <div><strong>Loja física</strong><br>Avenida Dona Gertrudes, 273, Centro – São João da Boa Vista/SP</div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <i class="fab fa-whatsapp fa-2x me-3" style="color: var(--flora-rose);"></i>
+                        <div><strong>WhatsApp para pedidos</strong><br>(19) 99447-9582</div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <i class="fas fa-envelope fa-2x me-3" style="color: var(--flora-rose);"></i>
+                        <div><strong>E-mail</strong><br>flores@grupoflora.com.br</div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <i class="fas fa-clock fa-2x me-3" style="color: var(--flora-rose);"></i>
+                        <div><strong>Horário de funcionamento</strong><br>Segunda a Sexta: 8h às 19h | Sábado: 9h às 16h | Domingos: entregas sob encomenda</div>
+                    </div>
                 </div>
+                <a href="https://wa.me/5519994479582?text=Olá%20Grupo%20Flora%2C%20gostaria%20de%20um%20orçamento" target="_blank" class="btn btn-floral btn-lg mt-2"><i class="fab fa-whatsapp"></i> Solicitar orçamento</a>
             </div>
             <div class="col-lg-7">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-                    <div class="card-body p-4">
-                        <h4 class="mb-3"><i class="bi bi-shop me-2" style="color:#d97a6c;"></i> Visite nossa floricultura</h4>
-                        <div class="bg-light rounded-3 p-3 text-center">
-                            <i class="bi bi-buildings fs-1 d-block mb-2 text-secondary"></i>
-                            <p class="mb-0"><strong>Avenida Dona Gertrudes, 273 - Centro</strong><br>Em frente à Praça Matriz, São João da Boa Vista - SP.</p>
-                            <hr>
-                            <a href="https://maps.google.com/?q=Avenida+Dona+Gertrudes+273+São+João+da+Boa+Vista+SP" target="_blank" class="btn btn-sm btn-outline-secondary mt-2"><i class="bi bi-map"></i> Abrir no Google Maps</a>
-                        </div>
-                        <div class="alert alert-success mt-3 d-flex align-items-center" role="alert" style="background:#e9f7e1;">
-                            <i class="bi bi-flower1 me-2 fs-5"></i>
-                            <div>📍 Entregas para toda a região de São João da Boa Vista, Aguaí e Vargem Grande do Sul. Consulte frete grátis para pedidos acima de R$ 150,00!</div>
-                        </div>
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.260588914022!2d-46.797388884793!3d-21.972417585303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c9c4a2b2b2b2b%3A0x1234567890abcdef!2sAv.%20Dona%20Gertrudes%2C%20273%20-%20Centro%2C%20S%C3%A3o%20Jo%C3%A3o%20da%20Boa%20Vista%20-%20SP%2C%2013870-110!5e0!3m2!1spt-BR!2sbr!4v1712345678901!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="p-3 bg-white text-center small border-top">
+                        🌸 Estamos localizados no coração de São João da Boa Vista. Venha nos visitar!
                     </div>
                 </div>
             </div>
@@ -538,85 +591,73 @@
     </div>
 </section>
 
-<!-- Footer completo com LOGO e dados -->
-<footer>
+<!-- Footer completo com informações legais e LOGO -->
+<footer class="footer pt-5 pb-4">
     <div class="container">
-        <div class="row gy-4">
-            <div class="col-md-5">
-                <a href="#" class="footer-logo text-decoration-none">
-                    <div class="footer-logo-icon">
-                        <i class="bi bi-flower1"></i>
-                    </div>
-                    <div class="footer-logo-text">Grupo<span>Flora</span></div>
-                </a>
-                <p class="mt-3" style="color:#f0e6d8;">Flores que encantam, entregam emoção. Tradição e qualidade desde 2008 em São João da Boa Vista.</p>
-                <div class="mt-3">
-                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
-                    <a href="#" class="social-icon"><i class="bi bi-pinterest"></i></a>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3094/3094845.png" alt="Logo Grupo Flora" class="footer-logo-img">
+                    <h4 class="text-white fw-bold mb-0">Grupo Flora</h4>
+                </div>
+                <p style="color:#d4e2cf;">Flores que contam histórias, buquês que emocionam. Tradição e beleza desde 2008 em São João da Boa Vista.</p>
+                <div>
+                    <a href="#" class="me-3 text-white-50"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="me-3 text-white-50"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white-50"><i class="fab fa-pinterest fa-lg"></i></a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <h5 class="text-white fw-semibold">Navegação</h5>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white">Navegação</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#home" class="text-decoration-none" style="color:#f0e6d8;">Início</a></li>
-                    <li class="mb-2"><a href="#produtos" class="text-decoration-none" style="color:#f0e6d8;">Flores & Arranjos</a></li>
-                    <li class="mb-2"><a href="#diferenciais" class="text-decoration-none" style="color:#f0e6d8;">Diferenciais</a></li>
-                    <li class="mb-2"><a href="#sobre" class="text-decoration-none" style="color:#f0e6d8;">Sobre nós</a></li>
-                    <li class="mb-2"><a href="#contato" class="text-decoration-none" style="color:#f0e6d8;">Contato e entregas</a></li>
+                    <li class="mb-2"><a href="#home" class="text-white-50 text-decoration-none">→ Início</a></li>
+                    <li class="mb-2"><a href="#produtos" class="text-white-50 text-decoration-none">→ Buquês e arranjos</a></li>
+                    <li class="mb-2"><a href="#categorias" class="text-white-50 text-decoration-none">→ Categorias</a></li>
+                    <li class="mb-2"><a href="#sobre" class="text-white-50 text-decoration-none">→ Nossa história</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <h5 class="text-white fw-semibold">Dados cadastrais</h5>
-                <p class="small mb-1"><i class="bi bi-cnpj"></i> CNPJ: 10.158.838/0001-61</p>
-                <p class="small mb-1"><i class="bi bi-calendar"></i> Fundação: 20/06/2008</p>
-                <p class="small mb-0"><i class="bi bi-geo-alt"></i> São João da Boa Vista - SP</p>
-                <p class="small mt-2"><i class="bi bi-telephone"></i> (19) 99447-9582</p>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white">Contato e Localização</h5>
+                <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i> Av. Dona Gertrudes, 273 - Centro, SJBV</p>
+                <p class="mb-1"><i class="fab fa-whatsapp me-2"></i> (19) 99447-9582</p>
+                <p><i class="far fa-clock me-2"></i> Aberto de seg a sábado</p>
+                <small class="text-white-50">CNPJ: 10.158.838/0001-61 | Isabela Flores Intermediações LTDA</small>
             </div>
         </div>
-        <hr class="mt-4 opacity-25">
+        <hr class="bg-white-50">
         <div class="row">
-            <div class="col text-center small">
-                &copy; 2025 Grupo Flora - Isabela Flores Intermediacoes LTDA. Todos os direitos reservados.<br>
-                <span class="opacity-50">Avenida Dona Gertrudes, 273 - Centro | CEP: 13870-110 | Flores que emocionam</span>
+            <div class="col text-center text-white-50 small">
+                © 2025 Grupo Flora Floricultura – Todos os direitos reservados. Flores com amor e dedicação em São João da Boa Vista - SP.
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap JS bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Navegação suave e active link -->
 <script>
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || targetId === "") return;
+            const target = document.querySelector(targetId);
+            if(target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
-    // active scroll
-    const sections = document.querySelectorAll('section[id]');
+
+    // Botão voltar ao topo
+    const btnTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollPos = window.scrollY + 120;
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+        if(window.scrollY > 300) {
+            btnTop.style.display = 'flex';
+        } else {
+            btnTop.style.display = 'none';
+        }
     });
+    btnTop.style.display = 'none';
 </script>
 </body>
 </html>
