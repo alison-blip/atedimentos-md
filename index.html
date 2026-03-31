@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Grupo Flora | Floricultura & Presentes - São João da Boa Vista</title>
     
-    <!-- FAVICON - ÍCONE NA ABA DO NAVEGADOR -->
+    <!-- FAVICON - ÍCONE NA ABA DO NAVEGADOR (ADICIONADO!) -->
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3094/3094845.png">
     <link rel="shortcut icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3094/3094845.png">
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3094/3094845.png">
@@ -45,25 +45,29 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Logo personalizada com IMAGEM REAL */
+        /* Logo personalizada */
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
-        .logo-img {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--flora-rose), var(--flora-gold));
             border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             box-shadow: 0 4px 12px rgba(232,122,122,0.3);
-            border: 2px solid var(--flora-gold);
             transition: transform 0.3s ease;
-            background: white;
-            padding: 5px;
         }
-        .logo:hover .logo-img {
+        .logo-icon i {
+            font-size: 28px;
+            color: white;
+        }
+        .logo:hover .logo-icon {
             transform: scale(1.05);
         }
         .logo-text {
@@ -74,7 +78,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            line-height: 1.2;
         }
         .logo-text small {
             font-size: 0.7rem;
@@ -84,7 +87,6 @@
             -webkit-background-clip: unset;
             background-clip: unset;
             letter-spacing: 1px;
-            font-weight: 500;
         }
 
         /* Navbar */
@@ -313,18 +315,6 @@
             background: var(--flora-green);
             transform: translateY(-3px);
         }
-        
-        /* Logo no footer também */
-        .footer-logo-img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 2px solid var(--flora-gold);
-            background: white;
-            padding: 5px;
-        }
-        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem;
@@ -332,9 +322,9 @@
             .logo-text {
                 font-size: 1.2rem;
             }
-            .logo-img {
-                width: 42px;
-                height: 42px;
+            .logo-icon {
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -344,12 +334,13 @@
 <!-- Botão voltar ao topo -->
 <a href="#" class="btn-top" id="backToTop"><i class="fas fa-leaf"></i></a>
 
-<!-- Navbar com LOGO (IMAGEM REAL) -->
+<!-- Navbar com LOGO -->
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="logo" href="#">
-            <!-- LOGO COM IMAGEM DE FLOR - FAVICON TAMBÉM USA A MESMA IMAGEM -->
-            <img src="https://cdn-icons-png.flaticon.com/512/3094/3094845.png" alt="Logo Grupo Flora" class="logo-img">
+            <div class="logo-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
             <div class="logo-text">
                 Grupo Flora
                 <small>floricultura & presentes</small>
@@ -601,13 +592,15 @@
     </div>
 </section>
 
-<!-- Footer completo com informações legais e LOGO -->
+<!-- Footer completo com informações legais -->
 <footer class="footer pt-5 pb-4">
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3094/3094845.png" alt="Logo Grupo Flora" class="footer-logo-img">
+                    <div class="logo-icon" style="background: white;">
+                        <i class="fas fa-seedling" style="color: var(--flora-green);"></i>
+                    </div>
                     <h4 class="text-white fw-bold mb-0">Grupo Flora</h4>
                 </div>
                 <p style="color:#d4e2cf;">Flores que contam histórias, buquês que emocionam. Tradição e beleza desde 2008 em São João da Boa Vista.</p>
